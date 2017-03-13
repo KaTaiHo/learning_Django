@@ -15,4 +15,4 @@ class Schedule(models.Model):
     room = models.IntegerField()
 
     def __str__(self):
-        return str(self.course_num) + str(self.unique) + str(self.instructor)
+        return str(self.dept) + str(self.course_num) + str(self.year)

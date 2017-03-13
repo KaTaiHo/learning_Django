@@ -1,11 +1,14 @@
 from ftplib import FTP
 import csv
 import os
+import os, django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scheduler.settings")
+django.setup()
 from courses.models import Schedule
 
 def get_pos(name):
 	for i, title in enumerate(index_list):
-		if (str(title) == str(name)):
+		if (str(title).strip() == str(name)):
 			return i
 
 current_dir = os.getcwd()
@@ -45,11 +48,19 @@ writer = csv.writer(log)
 for row in save_list:
 	writer.writerow(row)
 log.close()
-
-for row in save_list:
-	q = Schedule(year = row[get_pos('Year')], dept = row[get_pos('Dept-Abbr')], course_num = row[get_pos('Course Nbr')],
-		unique = row[get_pos('Unique')], title = row[get_pos('Title')], instructor = row[get_pos('Instructor')],
-		days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
-		building = row[get_pos('Building')], room = row[get_pos('Building')])
-	q.save()
-
+print (Schedule.objects.all())
+print (get_pos('Days'))
+print (get_pos('From'))
+print (get_pos('To'))
+print (index_list)
+for row in save_list[2:]:
+	try:
+		q = Schedule(year = row[get_pos('Year')], dept = row[get_pos('Dept-Abbr')], course_num = row[get_pos('Course Nbr')],
+			unique = row[get_pos('Unique')], title = row[get_pos('Title')], instructor = row[get_pos('Instructor')],
+			days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
+			building = row[get_pos('Building')], room = row[get_pos('Room')])
+		print (q)
+		q.save()
+	except:
+		pass
+print (Schedule.objects.all())

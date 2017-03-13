@@ -6,7 +6,7 @@ class Schedule(models.Model):
     dept = models.CharField(max_length=4)
     course_num = models.IntegerField()
     unique = models.IntegerField()
-    title = models.CharField(max_length=15)
+    title = models.CharField(max_length=30)
     instructor = models.CharField(max_length=20)
     days = models.CharField(max_length=6)
     start_time = models.IntegerField()
@@ -15,4 +15,4 @@ class Schedule(models.Model):
     room = models.IntegerField()
 
     def __str__(self):
-        return self.course_num + self.unique + self.instructor
+        return str(self.course_num) + str(self.unique) + str(self.instructor)

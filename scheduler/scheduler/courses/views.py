@@ -15,5 +15,13 @@ class ScheduleList(APIView):
         serializer = ScheduleSerializer(schedule, many = True)
         return Response(serializer.data)
 
+    def get(self, request, dept_name, course_id, year_id):
+        schedule = Schedule.objects.filter(
+            dept=str(dept_name), course_num=int(course_id),
+            year = int(year_id)
+        )
+        serializer = ScheduleSerializer(schedule, many=True)
+        return Response(serializer.data)
+
     def post(self):
         pass

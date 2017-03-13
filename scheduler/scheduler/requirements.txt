@@ -1,0 +1,6 @@
+Cython==0.24.1
+Django==1.10.6
+Kivy==1.9.1
+Kivy-Garden==0.1.4
+pygame==1.9.2b8
+requests==2.11.1

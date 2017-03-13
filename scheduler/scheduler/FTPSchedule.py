@@ -6,6 +6,12 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scheduler.settings")
 django.setup()
 from courses.models import Schedule
 
+def fix_input(dept_name):
+	if ' ' in str(dept_name):
+		dept_name = dept_name.split(' ')
+		dept_name = dept_name[0] + dept_name[1]
+	return str(dept_name).strip()
+
 def get_pos(name):
 	for i, title in enumerate(index_list):
 		if (str(title).strip() == str(name)):
@@ -55,11 +61,11 @@ print (get_pos('To'))
 print (index_list)
 for row in save_list[2:]:
 	try:
-		q = Schedule(year = row[get_pos('Year')], dept = row[get_pos('Dept-Abbr')], course_num = row[get_pos('Course Nbr')],
-			unique = row[get_pos('Unique')], title = row[get_pos('Title')], instructor = row[get_pos('Instructor')],
+		q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
+			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip(), instructor = fix_input(row[get_pos('Instructor')]),
 			days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
 			building = row[get_pos('Building')], room = row[get_pos('Room')])
-		print (q)
+		# print (q)
 		q.save()
 	except:
 		pass

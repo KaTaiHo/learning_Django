@@ -3,16 +3,16 @@ from django.db import models
 # Create your models here.
 class Schedule(models.Model):
     year = models.IntegerField()
-    dept = models.CharField(max_length=4)
-    course_num = models.IntegerField()
+    dept = models.CharField(max_length=3)
+    course_num = models.CharField(max_length=4)
     unique = models.IntegerField()
-    title = models.CharField(max_length=30)
-    instructor = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
+    instructor = models.CharField(max_length=30)
     days = models.CharField(max_length=6)
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     building = models.CharField(max_length=5)
-    room = models.IntegerField()
+    room = models.CharField(max_length=7)
 
     def __str__(self):
         return str(self.dept) + str(self.course_num) + str(self.year)

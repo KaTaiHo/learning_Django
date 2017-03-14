@@ -22,6 +22,3 @@ class ScheduleList(APIView):
         )
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)
-
-    def post(self):
-        pass

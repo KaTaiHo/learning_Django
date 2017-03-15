@@ -1,0 +1,33 @@
+h1 {
+    color: green;
+}
+
+.navbar-inverse {
+    margin: 0 auto;
+}
+
+.navbar-inverse .container-fluid {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.navbar-inner {
+    min-height: 0px;
+}
+
+.navbar-inverse li a {
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.navbar-inverse a {
+    line-height: 40px;
+    font-size: 20px;
+}
+
+#body-calendar {
+    width: 70%;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: #ff0000 #0000ff;
+}

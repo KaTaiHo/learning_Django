@@ -10,11 +10,6 @@ from .serializers import ScheduleSerializer
 # list all schedules or create a new one
 class ScheduleList(APIView):
 
-    def get(self, request):
-        schedule = Schedule.objects.all()
-        serializer = ScheduleSerializer(schedule, many = True)
-        return Response(serializer.data)
-
     def get(self, request, dept_name, course_id, year_id):
         schedule = Schedule.objects.filter(
             dept=str(dept_name), course_num=str(course_id),
@@ -23,6 +18,7 @@ class ScheduleList(APIView):
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)
 
+class UniqueIDList(APIView):
     def get(self, request, unique_id, year_id):
         schedule = Schedule.objects.filter(
             unique=int(unique_id), year=int(year_id)

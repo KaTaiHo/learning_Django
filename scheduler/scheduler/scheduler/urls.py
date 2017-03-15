@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^schedule/$', views.ScheduleList.as_view()),
     url(r'^schedule/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),
-    url(r'^schedule/(\d+)/(\d+)/$', views.ScheduleList.as_view()),
+    url(r'^schedule/(\d+)/(\d+)/$', views.UniqueIDList.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

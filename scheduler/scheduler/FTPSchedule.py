@@ -16,6 +16,7 @@ def get_pos(name):
 	for i, title in enumerate(index_list):
 		if (str(title).strip() == str(name)):
 			return i
+			
 def update_sql():
 	current_dir = os.getcwd()
 	os.chdir(current_dir)
@@ -47,21 +48,21 @@ def update_sql():
 	print (real_count)
 	print (time_modified)
 
-	# log.close()
+	log.close()
 
-	# log = open('Spring2017.csv', 'w')
-	# writer = csv.writer(log)
-	# for row in save_list:
-	# 	writer.writerow(row)
-	# log.close()
+	log = open('Spring2017.csv', 'w')
+	writer = csv.writer(log)
+	for row in save_list:
+		writer.writerow(row)
+	log.close()
 
-	# for row in save_list[2:]:
-	# 	try:
-	# 		q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
-	# 			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip(), instructor = fix_input(row[get_pos('Instructor')]),
-	# 			days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
-	# 			building = row[get_pos('Building')], room = row[get_pos('Room')])
-	# 		# print (q)
-	# 		q.save()
-	# 	except:
-	# 		pass
+	for row in save_list[2:]:
+		try:
+			q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
+				unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip(), instructor = fix_input(row[get_pos('Instructor')]),
+				days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
+				building = row[get_pos('Building')], room = row[get_pos('Room')])
+			# print (q)
+			q.save()
+		except:
+			pass

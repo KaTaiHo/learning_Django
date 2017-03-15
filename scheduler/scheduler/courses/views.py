@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Schedule
 from .serializers import ScheduleSerializer
+from django.views import generic
 # Create your views here.
 
 # list all schedules or create a new one
@@ -25,3 +26,9 @@ class UniqueIDList(APIView):
         )
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)
+
+class HomeView(generic.ListView):
+    template_name = 'index.html'
+
+    def get_queryset(self):
+        pass

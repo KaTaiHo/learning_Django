@@ -20,6 +20,7 @@ from courses import views
 
 
 urlpatterns = [
+    url(r'^', views.HomeView.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^schedule/$', views.ScheduleList.as_view()),
     url(r'^schedule/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),

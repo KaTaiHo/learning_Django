@@ -22,3 +22,10 @@ class ScheduleList(APIView):
         )
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)
+
+    def get(self, request, unique_id, year_id):
+        schedule = Schedule.objects.filter(
+            unique=int(unique_id), year=int(year_id)
+        )
+        serializer = ScheduleSerializer(schedule, many=True)
+        return Response(serializer.data)

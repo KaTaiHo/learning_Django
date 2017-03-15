@@ -1,5 +1,5 @@
 h1 {
-    color: green;
+    color: blue;
 }
 
 .navbar-inverse {
@@ -7,7 +7,7 @@ h1 {
 }
 
 .navbar-inverse .container-fluid {
-    width: 70%;
+    width: 1000px;
     margin: 0 auto;
 }
 
@@ -26,8 +26,6 @@ h1 {
 }
 
 #body-calendar {
-    width: 70%;
+    width: 1000px;
     margin: 0 auto;
-    border-style: solid;
-    border-color: #ff0000 #0000ff;
 }

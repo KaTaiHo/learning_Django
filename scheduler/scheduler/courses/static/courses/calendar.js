@@ -1,11 +1,47 @@
 function populateCourseID() {
-    var x = document.getElementById("course_id");
+    var course_list = document.getElementById("course_id");
     var option = document.createElement("option");
-//    {% for data in unique_id_set %}
-//        option.text = ("{{data}}");
-//        x.add(option);
-//    {% endfor %}
+    var converted = course_list.getAttribute('name');
+    var converted = JSON.parse(converted);
+    for (step = 0; step < converted.length; step++) {
+        course_list.options[course_list.options.length] = new Option(converted[step]);
+    }
 }
+
+var sel = document.getElementById('course_id');
+
+sel.addEventListener('change', function () {
+    try {
+        alert(sel.options[sel.selectedIndex].value);
+        var selected = sel.options[sel.selectedIndex].value;
+        var course_list = document.getElementById("course_num");
+        var converted = course_list.getAttribute('name');
+        var converted = JSON.parse(converted);
+
+        for (step = 0; step < converted[selected].length; step++) {
+            var option = document.createElement("option");
+            option.value = String(converted[selected][step]);
+            option.text = String(converted[selected][step]);
+            course_list.options.add(option);
+        }
+        course_list.selectedIndex = 1;
+    }
+    catch(err) {
+        alert(err.message);
+    }
+});
+
+
+function removeAllOptions(){
+	var select = document.getElementById("course_id");
+	select.options.length = 0;
+}
+
+//$('#course_num').change(function() {
+
+//
+////    alert("change!");
+//}
 
 var initialize_calendar;
 initialize_calendar = function() {
@@ -25,9 +61,10 @@ initialize_calendar = function() {
     })
 };
 
+
 $(window).ready(function() {
     initialize_calendar();
-
+    populateCourseID();
 });
 
 

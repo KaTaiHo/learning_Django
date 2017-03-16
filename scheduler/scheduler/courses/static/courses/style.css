@@ -7,7 +7,7 @@ h1 {
 }
 
 .navbar-inverse .container-fluid {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -15,17 +15,7 @@ h1 {
     min-height: 0px;
 }
 
-.navbar-inverse li a {
-    line-height: 40px;
-    font-size: 18px;
-}
-
-.navbar-inverse a {
-    line-height: 40px;
-    font-size: 20px;
-}
-
 #body-calendar {
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
 }

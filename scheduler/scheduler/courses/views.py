@@ -8,6 +8,7 @@ from .serializers import ScheduleSerializer
 from django.views import generic
 from django.core import serializers
 from django.shortcuts import render_to_response
+from collections import defaultdict
 import json
 # Create your views here.
 
@@ -15,13 +16,15 @@ def get_unique_set():
     json_serializer = serializers.get_serializer("json")()
     dept_name = json_serializer.serialize(Schedule.objects.all().order_by('dept'), ensure_ascii=False)
     data = json.loads(dept_name)
+    d = defaultdict(list)
     unique_id_set = set()
     for x in range(0, len(data)):
         unique_id_set.add(data[x]['fields']['dept'])
+        d[str(data[x]['fields']['dept'])].append(data[x]['fields']['course_num'])
     unique_id_set = sorted(unique_id_set)
     unique_id_set = json.dumps(unique_id_set)
-
-    return unique_id_set
+    d = json.dumps(d)
+    return unique_id_set, d
 
 # list all schedules or create a new one
 class ScheduleList(APIView):
@@ -42,11 +45,15 @@ class UniqueIDList(APIView):
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)
 
-class HomeView(generic.ListView):
-    template_name = 'index.html'
-    context_object_name = 'unique_id_set'
+def index(request):
+    unique_id_set, course_number = get_unique_set()
+
+    context = {
+        'unique_id_set': unique_id_set,
+        'course_number': course_number
+    }
+
+    return render(request, 'courses/index.html', context)
 
 
-    def get_queryset(self):
-        return get_unique_set()
 

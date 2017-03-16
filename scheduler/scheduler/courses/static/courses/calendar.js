@@ -10,27 +10,25 @@ function populateCourseID() {
 
 var sel = document.getElementById('course_id');
 
-sel.addEventListener('change', function () {
+sel.addEventListener('change', updateCourseList);
+
+
+function updateCourseList() {
     try {
-        alert(sel.options[sel.selectedIndex].value);
         var selected = sel.options[sel.selectedIndex].value;
         var course_list = document.getElementById("course_num");
         var converted = course_list.getAttribute('name');
         var converted = JSON.parse(converted);
 
         for (step = 0; step < converted[selected].length; step++) {
-            var option = document.createElement("option");
-            option.value = String(converted[selected][step]);
-            option.text = String(converted[selected][step]);
-            course_list.options.add(option);
+            $("#course_num").append('<option value="'+step+'" selected="">'+converted[selected][step]+'</option>');
         }
-        course_list.selectedIndex = 1;
+        $("#course_num").selectpicker("refresh");
     }
     catch(err) {
         alert(err.message);
     }
-});
-
+}
 
 function removeAllOptions(){
 	var select = document.getElementById("course_id");
@@ -65,6 +63,7 @@ initialize_calendar = function() {
 $(window).ready(function() {
     initialize_calendar();
     populateCourseID();
+    updateCourseList();
 });
 
 

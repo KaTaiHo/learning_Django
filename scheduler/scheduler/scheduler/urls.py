@@ -24,9 +24,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^schedule/$', views.ScheduleList.as_view()),
-    url(r'^schedule/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),
-    url(r'^schedule/(\d+)/(\d+)/$', views.UniqueIDList.as_view()),
+    url(r'^api/$', views.ScheduleList.as_view()),
+    url(r'^api/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),
+    url(r'^api/(\d+)/(\d+)/$', views.UniqueIDList.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

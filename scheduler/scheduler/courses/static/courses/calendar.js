@@ -37,7 +37,7 @@ function displayCourse() {
               + "</p>" +
         "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "<strong>Days: </strong>" + courseArray[i]['days'] +
             "<strong>Time: </strong>" + course[i]['start_time'] + " to " + course[i]['end_time'] + "<strong>Location: </strong>" + course[i]['building'] +
-             + course[i]['room'] + "</p>" +
+             course[i]['room'] + "</p>" +
         "</div>"
         );
     }

@@ -32,8 +32,6 @@ function updateCourseList() {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", "http://138.197.115.22:8000/api/EE/306/2017", false );
         xmlHttp.send(null);
-        alert(xmlHttp.responseText);
-        alert("update");
         var selected = sel.options[sel.selectedIndex].value;
         var course_list = document.getElementById("course_num");
         var converted = course_list.getAttribute('name');

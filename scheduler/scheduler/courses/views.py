@@ -9,7 +9,6 @@ from django.views import generic
 from django.core import serializers
 from django.shortcuts import render_to_response
 from collections import defaultdict
-from django.http import HttpResponse
 import json
 # Create your views here.
 
@@ -47,23 +46,16 @@ class ScheduleList(APIView):
             dept=str(dept_name), course_num=str(course_id),
             year = int(year_id)
         )
-        json_serializer = serializers.get_serializer("json")()
-        response = json_serializer.serialize(schedule, ensure_ascii=False)
-        return HttpResponse(response, content_type="application/json")
-        #serializer = ScheduleSerializer(schedule, many=True)
-        # return Response(serializer.data)
+        serializer = ScheduleSerializer(schedule, many=True)
+        return Response(serializer.data)
 
 class UniqueIDList(APIView):
-
     def get(self, request, unique_id, year_id):
         schedule = Schedule.objects.filter(
             unique=int(unique_id), year=int(year_id)
         )
-        json_serializer = serializers.get_serializer("json")()
-        response = json_serializer.serialize(schedule, ensure_ascii=False)
-        return HttpResponse(response, content_type="application/json")
-        #serializer = ScheduleSerializer(schedule, many=True)
-        # return Response(serializer.data)
+        serializer = ScheduleSerializer(schedule, many=True)
+        return Response(serializer.data)
 
 def index(request):
     unique_id_set, course_number = get_unique_set()

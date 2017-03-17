@@ -32,8 +32,8 @@ function displayCourse() {
     for (i = 0; i < courseArray.length; i++) {
         $('.modal-body').append(
         "<div>" +
-        "<p>" + "Title: " + courseArray[i]['title'] + " Professor: " + courseArray[i]['instructor'] + "</p>" +
-        "<p>" + "Unique ID: " + courseArray[i]['id'] + "</p>" +
+        "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "   <strong>Professor: </strong>" + courseArray[i]['instructor'] + "</p>" +
+        "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "</p>" +
         "</div>"
         );
     }

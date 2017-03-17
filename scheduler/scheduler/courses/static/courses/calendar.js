@@ -22,6 +22,7 @@ function closeModal() {
 }
 
 function displayCourse() {
+    $('.modal-body').empty();
     var arg1 = $('#course_id :selected').text();
     var arg2 = $('#course_num :selected').text();
     var xmlHttp = new XMLHttpRequest();

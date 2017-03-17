@@ -13,15 +13,27 @@ var sel = document.getElementById('course_id');
 $(document).ready(function() {
     $('#course_id').change(updateCourseList);
     $('#display-course').click(displayCourse);
+    $('#myModal .close').click(closeModal);
  });
 
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = "none";
+}
+
 function displayCourse() {
-    var arg1 = $('#course_id :selected').text();
-    var arg2 = $('#course_num :selected').text();
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
-    xmlHttp.send(null);
-    alert(xmlHttp.responseText);
+//    var arg1 = $('#course_id :selected').text();
+//    var arg2 = $('#course_num :selected').text();
+//    var xmlHttp = new XMLHttpRequest();
+//    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
+//    xmlHttp.send(null);
+//    var courseArray = JSON.parse(xmlHttp.responseText);
+//    for (i = 0; i < courseArray.length; i++) {
+//        courseArray[i]['id'];
+//    }
+//    alert(xmlHttp.responseText);
+    var modal = document.getElementById('myModal');
+    modal.style.display = "block";
 }
 
 function deleteCourseList() {

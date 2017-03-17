@@ -54,6 +54,7 @@ class ScheduleList(APIView):
         # return Response(serializer.data)
 
 class UniqueIDList(APIView):
+
     def get(self, request, unique_id, year_id):
         schedule = Schedule.objects.filter(
             unique=int(unique_id), year=int(year_id)

@@ -18,11 +18,23 @@ def get_unique_set():
     data = json.loads(dept_name)
     d = defaultdict(list)
     unique_id_set = set()
+    myset = set()
+    current_dept = ""
     for x in range(0, len(data)):
-        unique_id_set.add(data[x]['fields']['dept'])
-        d[str(data[x]['fields']['dept'])].append(data[x]['fields']['course_num'])
+        unique_id_set.add(str(data[x]['fields']['dept']))
+
+        if str(data[x]['fields']['dept']) != current_dept:
+            current_dept = str(data[x]['fields']['dept'])
+            myset.clear()
+        if data[x]['fields']['course_num'] in myset:
+            pass
+        else:
+            d[str(data[x]['fields']['dept'])].append(data[x]['fields']['course_num'])
+            myset.add(data[x]['fields']['course_num'])
+
     unique_id_set = sorted(unique_id_set)
     unique_id_set = json.dumps(unique_id_set)
+
     d = json.dumps(d)
     return unique_id_set, d
 

@@ -13,6 +13,7 @@ class Schedule(models.Model):
     end_time = models.IntegerField()
     building = models.CharField(max_length=5)
     room = models.CharField(max_length=7)
+    status = models.CharField(max_length=12, default="unknown")
 
     def __str__(self):
         return str(self.dept) + str(self.course_num) + str(self.year)

@@ -9,12 +9,22 @@ function populateCourseID() {
 }
 
 var sel = document.getElementById('course_id');
+//sel.addEventListener('change', updateCourseList());
 
-sel.addEventListener('change', updateCourseList);
+$(document).ready(function() {
+    $('#course_id').change(updateCourseList);
+ });
 
+
+function deleteCourseList() {
+    $("#course_num").empty();
+    $("#course_num").selectpicker("refresh");
+}
 
 function updateCourseList() {
     try {
+        deleteCourseList();
+
         var selected = sel.options[sel.selectedIndex].value;
         var course_list = document.getElementById("course_num");
         var converted = course_list.getAttribute('name');
@@ -28,11 +38,6 @@ function updateCourseList() {
     catch(err) {
         alert(err.message);
     }
-}
-
-function removeAllOptions(){
-	var select = document.getElementById("course_id");
-	select.options.length = 0;
 }
 
 //$('#course_num').change(function() {
@@ -49,21 +54,21 @@ initialize_calendar = function() {
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month, agendaWeek, agendaDay'
+                right: 'agendaWeek, month, agendaDay'
             },
+
             selectable: true,
             selectHelper: true,
             editable: true,
-            eventLimit: true
+            eventLimit: true,
+            defaultView: 'agendaWeek'
         });
     })
 };
-
 
 $(window).ready(function() {
     initialize_calendar();
     populateCourseID();
     updateCourseList();
 });
-
 

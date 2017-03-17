@@ -43,7 +43,7 @@ body {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #000;
     margin: auto;
     padding: 0;
     border: 1px solid #888;

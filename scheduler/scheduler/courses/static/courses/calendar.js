@@ -38,7 +38,7 @@ function displayCourse() {
         "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "&emsp;<strong>Days: </strong>" + courseArray[i]['days'] +
             "&emsp;<strong>Time: </strong>" + courseArray[i]['start_time'] + " to " + courseArray[i]['end_time'] + "&emsp;<strong>Location: </strong>" + courseArray[i]['building'] +
               "&emsp;" + courseArray[i]['room'] + "</p>" +
-        "</div>"
+        "</div><hr>"
         );
     }
     //alert(xmlHttp.responseText);

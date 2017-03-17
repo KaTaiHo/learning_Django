@@ -43,7 +43,7 @@ body {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #000;
+    background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -83,7 +83,7 @@ body {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #000;
     color: white;
 }
 
@@ -91,6 +91,6 @@ body {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #000;
     color: white;
 }

@@ -35,8 +35,8 @@ function displayCourse() {
         "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "&emsp;<strong>Professor: </strong>" + courseArray[i]['instructor'] +
             "&emsp;<strong>Status: </strong>" + courseArray[i]['status'] + "&emsp;<strong>Course: </strong>" + courseArray[i]['dept'] + courseArray[i]['course_num']
               + "</p>" +
-        "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "<strong>Days: </strong>" + courseArray[i]['days'] +
-            "<strong>Time: </strong>" + courseArray[i]['start_time'] + " to " + courseArray[i]['end_time'] + "<strong>Location: </strong>" + courseArray[i]['building'] +
+        "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "&emsp;<strong>Days: </strong>" + courseArray[i]['days'] +
+            "&emsp;<strong>Time: </strong>" + courseArray[i]['start_time'] + " to " + courseArray[i]['end_time'] + "&emsp;<strong>Location: </strong>" + courseArray[i]['building'] +
               "&emsp;" + courseArray[i]['room'] + "</p>" +
         "</div>"
         );

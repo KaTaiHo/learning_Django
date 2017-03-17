@@ -9,16 +9,21 @@ function populateCourseID() {
 }
 
 var sel = document.getElementById('course_id');
-//sel.addEventListener('change', updateCourseList());
 
 $(document).ready(function() {
     $('#course_id').change(updateCourseList);
+    $('#add-courses').click(displayCourse);
  });
-
 
 function deleteCourseList() {
     $("#course_num").empty();
     $("#course_num").selectpicker("refresh");
+}
+
+function displayCourse() {
+    var courseID = $('#course_id').find(":selected").text();
+    var courseNum = $('#course_num').find(":selected").text();
+
 }
 
 function updateCourseList() {
@@ -39,12 +44,6 @@ function updateCourseList() {
         alert(err.message);
     }
 }
-
-//$('#course_num').change(function() {
-
-//
-////    alert("change!");
-//}
 
 var initialize_calendar;
 initialize_calendar = function() {

@@ -45,15 +45,20 @@
 
             <div class="row">
                 <div class="col-sm-4">
-                    <select id="course_id" class="selectpicker" name="{{unique_id_set}}" data-live-search="true"></select>
+                    <center><select id="course_id" class="selectpicker" name="{{unique_id_set}}" data-live-search="true"></select></center>
                 </div>
                 <div class="col-sm-4">
-                    <select id="course_num" class="selectpicker" name="{{course_number}}" data-live-search="true">
-                    </select>
+                    <center><select id="course_num" class="selectpicker" name="{{course_number}}" data-live-search="true"></select></center>
                 </div>
-                <div class="col-sm-4"><center><a id="add-courses" class="btn btn-primary">Add Courses</a></center></div>
+                <div class="col-sm-4">
+                    <center><select id="semester" class="selectpicker"  data-live-search="true">
+                        <option>Spring 2017</option>
+                    </select></center>
+                </div>
             </div>
         </div>
+        <br>
+        <div class="col-sm-4"><center><a id="display-course" class="btn btn-primary">Search Course</a></center></div>
     </div>
     <script src="{% static 'courses/calendar.js' %}"></script>
 

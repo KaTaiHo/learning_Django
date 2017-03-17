@@ -12,11 +12,10 @@ var sel = document.getElementById('course_id');
 
 $(document).ready(function() {
     $('#course_id').change(updateCourseList);
-    $('#add-courses').click(displayCourse);
-    $('#add-courses').click(getCourses);
+    $('#display-course').click(displayCourse);
  });
 
-function getCourses() {
+function displayCourse() {
     var arg1 = $('#course_id :selected').text();
     var arg2 = $('#course_num :selected').text();
     var xmlHttp = new XMLHttpRequest();
@@ -28,11 +27,6 @@ function getCourses() {
 function deleteCourseList() {
     $("#course_num").empty();
     $("#course_num").selectpicker("refresh");
-}
-
-function displayCourse() {
-    var courseID = $('#course_id').find(":selected").text();
-    var courseNum = $('#course_num').find(":selected").text();
 }
 
 function updateCourseList() {

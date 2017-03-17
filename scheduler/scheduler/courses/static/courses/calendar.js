@@ -30,7 +30,14 @@ function displayCourse() {
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
     for (i = 0; i < courseArray.length; i++) {
-        $('.modal-body').append("<p>" + courseArray[i]['id'] + "</p>");
+        $('#selected-course-data').append(
+        "<div>" +
+        "<p>" Title: + courseArray[i]['title'] + "</p>" +
+        "<p>" Professor: + courseArray[i]['instructor'] + "</p>" +
+        "<p>" Unique ID: + courseArray[i]['id'] + "</p>" +
+        "<p>" Unique ID: + courseArray[i]['id'] + "</p>" +
+        "</div>"
+        );
     }
     //alert(xmlHttp.responseText);
     var modal = document.getElementById('myModal');

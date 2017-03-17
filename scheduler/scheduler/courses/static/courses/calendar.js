@@ -25,13 +25,13 @@ function displayCourse() {
     var arg1 = $('#course_id :selected').text();
     var arg2 = $('#course_num :selected').text();
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
-    xmlHttp.send(null);
-    var courseArray = JSON.parse(xmlHttp.responseText);
-    for (i = 0; i < courseArray.length; i++) {
-        $('.modal-body').append("<p>" + courseArray[i]['id'] + "</p>");
-    }
-    alert(xmlHttp.responseText);
+//    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
+//    xmlHttp.send(null);
+//    var courseArray = JSON.parse(xmlHttp.responseText);
+//    for (i = 0; i < courseArray.length; i++) {
+//        $('.modal-body').append("<p>" + courseArray[i]['id'] + "</p>");
+//    }
+//    alert(xmlHttp.responseText);
     var modal = document.getElementById('myModal');
     modal.style.display = "block";
 }

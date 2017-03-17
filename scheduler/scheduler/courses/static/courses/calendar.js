@@ -37,7 +37,7 @@ function displayCourse() {
                + "</p>" +
         "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "&emsp;<strong>Days: </strong>" + courseArray[i]['days'] +
             "&emsp;<strong>Time: </strong>" + courseArray[i]['start_time'] + " to " + courseArray[i]['end_time'] + "&emsp;<strong>Location: </strong>" + courseArray[i]['building'] +
-              "&emsp;" + courseArray[i]['room'] + "&emsp;&emsp;<button type='button'>Add This Section</button>" + "</p>" +
+              "&emsp;" + courseArray[i]['room'] + "&emsp;&emsp;<button type='button' class='button'>Add This Section</button>" + "</p>" +
         "</div><hr>"
         );
     }

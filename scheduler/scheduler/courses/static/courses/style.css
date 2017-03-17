@@ -100,3 +100,8 @@ body {
     background-color: #000;
     color: white;
 }
+
+.modal-body button {
+    background-color:#fed;
+    color: white;
+}

@@ -13,7 +13,17 @@ var sel = document.getElementById('course_id');
 $(document).ready(function() {
     $('#course_id').change(updateCourseList);
     $('#add-courses').click(displayCourse);
+    $('#add-courses').click(getCourses);
  });
+
+function getCourses() {
+    var arg1 = $('#course_id :selected').text();
+    var arg2 = $('#course_num :selected').text();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
+    xmlHttp.send(null);
+    alert(xmlHttp.responseText);
+}
 
 function deleteCourseList() {
     $("#course_num").empty();
@@ -23,15 +33,11 @@ function deleteCourseList() {
 function displayCourse() {
     var courseID = $('#course_id').find(":selected").text();
     var courseNum = $('#course_num').find(":selected").text();
-
 }
 
 function updateCourseList() {
     try {
         deleteCourseList();
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", "http://138.197.115.22:8000/api/EE/306/2017", false );
-        xmlHttp.send(null);
         var selected = sel.options[sel.selectedIndex].value;
         var course_list = document.getElementById("course_num");
         var converted = course_list.getAttribute('name');

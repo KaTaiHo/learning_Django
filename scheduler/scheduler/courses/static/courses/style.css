@@ -104,4 +104,5 @@ body {
 .modal-body button {
     background-color:#fed;
     color: white;
+    float: right;
 }

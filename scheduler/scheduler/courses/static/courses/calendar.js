@@ -30,7 +30,7 @@ function displayCourse() {
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
     for (i = 0; i < courseArray.length; i++) {
-        $('#selected-course-data').append(
+        $('.modal-body').append(
         "<div>" +
         "<p>" Title: + courseArray[i]['title'] + "</p>" +
         "<p>" Professor: + courseArray[i]['instructor'] + "</p>" +

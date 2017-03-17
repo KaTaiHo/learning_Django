@@ -36,8 +36,8 @@ function displayCourse() {
             "&emsp;<strong>Status: </strong>" + courseArray[i]['status'] + "&emsp;<strong>Course: </strong>" + courseArray[i]['dept'] + courseArray[i]['course_num']
               + "</p>" +
         "<p>" + "<strong>Unique ID: </strong>" + courseArray[i]['id'] + "<strong>Days: </strong>" + courseArray[i]['days'] +
-            "<strong>Time: </strong>" + course[i]['start_time'] + " to " + course[i]['end_time'] + "<strong>Location: </strong>" + course[i]['building'] +
-             course[i]['room'] + "</p>" +
+            "<strong>Time: </strong>" + courseArray[i]['start_time'] + " to " + courseArray[i]['end_time'] + "<strong>Location: </strong>" + courseArray[i]['building'] +
+              "&emsp;" + courseArray[i]['room'] + "</p>" +
         "</div>"
         );
     }

@@ -72,7 +72,7 @@ for row in save_list[2:]:
 		q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
 			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip().replace(" ", "") , instructor = fix_input(row[get_pos('Instructor')]),
 			days = str(row[get_pos('Days')]).strip(), start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
-			building = row[get_pos('Building')], room = row[get_pos('Room')], status = current_status)
+			building = row[get_pos('Building')], room = str(row[get_pos('Room')]).strip(), status = current_status)
 		
 		q.save()
 		print (q)

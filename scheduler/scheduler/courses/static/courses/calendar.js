@@ -93,7 +93,9 @@ initialize_calendar = function() {
         var calendar = $(this);
         calendar.fullCalendar({
             header: {
-                center: 'title'
+                left: 'prev,next today',
+                center: 'title',
+                right: 'agendaWeek, month, agendaDay'
             },
 
             selectable: true,

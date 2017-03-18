@@ -62,16 +62,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/courses/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/courses/views.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,8 +77,18 @@
       <file leaf-file-name="calendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/courses/static/courses/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="94" column="103" selection-start-line="94" selection-start-column="103" selection-end-line="94" selection-end-column="103" />
+            <state relative-caret-position="-60">
+              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moment.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/courses/static/courses/fullcalendar/moment.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -778,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/static/courses/fullcalendar/moment.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/courses/static/courses/fullcalendar/fullcalendar.print.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -877,6 +870,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/courses/static/courses/fullcalendar/moment.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/courses/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -887,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/courses/static/courses/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="94" column="103" selection-start-line="94" selection-start-column="103" selection-end-line="94" selection-end-column="103" />
+        <state relative-caret-position="-60">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
           <folding />
         </state>
       </provider>

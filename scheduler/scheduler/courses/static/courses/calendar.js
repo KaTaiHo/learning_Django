@@ -91,7 +91,7 @@ function displayCourse() {
                     startTime = data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
                 }
 
-                if (data['end_time'].toString().length % 2 == 1) {
+                if (data['end_time'].toString().length % 2 == 0) {
                     endTime = data['end_time'].toString().slice(0,2) + ":" + data['end_time'].toString().slice(2,4);
                 }
                 else {

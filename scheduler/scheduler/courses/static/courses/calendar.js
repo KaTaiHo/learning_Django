@@ -16,15 +16,7 @@ $(document).ready(function() {
     $('#myModal .close').click(closeModal);
     $(".modal-body").find(".button").click(function () {
         alert("hi there");
-        var myCalendar = $('#calendar');
-        myCalendar.fullCalendar();
-        var myEvent = {
-          title:"my new event",
-          allDay: true,
-          start: new Date(),
-          end: new Date()
-        };
-        myCalendar.fullCalendar( 'renderEvent', myEvent );
+
     });
  });
 
@@ -39,6 +31,13 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+function getSpecificDate(d, num) {
+  d = new Date(d);
+  var day = d.getDay(),
+      diff = d.getDate() - day + (day == 0 ? -6:num); // adjust when day is sunday
+  return new Date(d.setDate(diff));
+}
+
 function displayCourse() {
     $('.modal-body').empty();
     var arg1 = $('#course_id :selected').text();
@@ -48,8 +47,9 @@ function displayCourse() {
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
     for (i = 0; i < courseArray.length; i++) {
+        var newID = JSON.stringify(courseArray[0]);
         $('.modal-body').append(
-        "<div>" +
+        "<div id=" + newID + ">" +
         "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "&emsp;<strong>Professor: </strong>" + courseArray[i]['instructor'] +
             "&emsp;<strong>Status: </strong>" + courseArray[i]['status'] + "&emsp;<strong>Course: </strong>" + courseArray[i]['dept'] + courseArray[i]['course_num']
                + "</p>" +

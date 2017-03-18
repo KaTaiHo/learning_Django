@@ -80,7 +80,7 @@ function displayCourse() {
                     s = s.slice(1, s.length);
                 }
 
-                var momentTime = getSpecificDate(new Date(), 4).toISOString().slice(0,11);
+                var momentTime = getSpecificDate(new Date(), dayIndex).toISOString().slice(0,11);
                 var startTime = "";
                 var endTime = "";
 

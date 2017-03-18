@@ -44,7 +44,7 @@ function displayCourse() {
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
     for (i = 0; i < courseArray.length; i++) {
-        var newID = JSON.stringify(courseArray[0]);
+        var newID = JSON.stringify(courseArray[i]);
         $('.modal-body').append(
         "<div id=" + newID + ">" +
         "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "&emsp;<strong>Professor: </strong>" + courseArray[i]['instructor'] +

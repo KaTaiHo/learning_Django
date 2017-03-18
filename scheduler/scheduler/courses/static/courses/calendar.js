@@ -37,10 +37,10 @@ $(document).ready(function() {
                 endTime = data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
             }
 
-            momentTime = momentTime + startTime + endTime;
+            momentTime = momentTime + startTime + ":00-"+ endTime;
             var m = $.fullCalendar.moment(momentTime);
             var event={id:0 , title: data['dept'] + data['course_num'], start:  m};
-            $('#calendar').fullCalendar( 'addEvent', event, true);
+            $('#calendar').fullCalendar( 'renderEvent', event, true);
         }
         catch(err){
             alert(err.message);

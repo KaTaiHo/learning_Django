@@ -14,38 +14,7 @@ $(document).ready(function() {
     $('#course_id').change(updateCourseList);
     $('#display-course').click(displayCourse);
     $('#myModal .close').click(closeModal);
-    $(".modal-body").find(".button").click(function () {
-        try {
-            var data = $(this).closest('div').attr("id");
-            data = JSON.parse(data);
-            alert(data);
-            var momentTime = getSpecificDate(new Date(), 4).toISOString().slice(0,11);
-            var startTime = "";
-            var endTime = "";
 
-            if (data['start_time'].toString().length % 2 == 0) {
-                startTime = data['start_time'].toString().slice(0,2) + ":" + data['start_time'].toString().slice(2,4);
-            }
-            else {
-                startTime = data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
-            }
-
-            if (data['end_time'].toString().length % 2 == 0) {
-                endTime = data['end_time'].toString().slice(0,2) + ":" + data['end_time'].toString().slice(2,4);
-            }
-            else {
-                endTime = data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
-            }
-
-            momentTime = momentTime + startTime + ":00-"+ endTime;
-            var m = $.fullCalendar.moment(momentTime);
-            var event={id:0 , title: data['dept'] + data['course_num'], start:  m};
-            $('#calendar').fullCalendar( 'renderEvent', event, true);
-        }
-        catch(err){
-            alert(err.message);
-        }
-    });
  });
 
 function addCalanderEvent(id, start, end, title, colour) {
@@ -90,6 +59,39 @@ function displayCourse() {
     //alert(xmlHttp.responseText);
     var modal = document.getElementById('myModal');
     modal.style.display = "block";
+
+    $(".modal-body").find(".button").click(function () {
+        try {
+            var data = $(this).closest('div').attr("id");
+            data = JSON.parse(data);
+            alert(data);
+            var momentTime = getSpecificDate(new Date(), 4).toISOString().slice(0,11);
+            var startTime = "";
+            var endTime = "";
+
+            if (data['start_time'].toString().length % 2 == 0) {
+                startTime = data['start_time'].toString().slice(0,2) + ":" + data['start_time'].toString().slice(2,4);
+            }
+            else {
+                startTime = data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
+            }
+
+            if (data['end_time'].toString().length % 2 == 0) {
+                endTime = data['end_time'].toString().slice(0,2) + ":" + data['end_time'].toString().slice(2,4);
+            }
+            else {
+                endTime = data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
+            }
+
+            momentTime = momentTime + startTime + ":00-"+ endTime;
+            var m = $.fullCalendar.moment(momentTime);
+            var event={id:0 , title: data['dept'] + data['course_num'], start:  m};
+            $('#calendar').fullCalendar( 'renderEvent', event, true);
+        }
+        catch(err){
+            alert(err.message);
+        }
+    });
 }
 
 function deleteCourseList() {

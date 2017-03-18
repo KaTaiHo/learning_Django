@@ -14,7 +14,25 @@ $(document).ready(function() {
     $('#course_id').change(updateCourseList);
     $('#display-course').click(displayCourse);
     $('#myModal .close').click(closeModal);
+    $(".modal-body").find(".button").click(function () {
+        alert("hi there");
+        var myCalendar = $('#calendar');
+        myCalendar.fullCalendar();
+        var myEvent = {
+          title:"my new event",
+          allDay: true,
+          start: new Date(),
+          end: new Date()
+        };
+        myCalendar.fullCalendar( 'renderEvent', myEvent );
+    });
  });
+
+function addCalanderEvent(id, start, end, title, colour) {
+    var m = $.fullCalendar.moment('2017-03-17T12:00:00-14:00');
+    var event={id:1 , title: 'New event', start:  m};
+    $('#calendar').fullCalendar( 'addEvent', event, true);
+}
 
 function closeModal() {
     var modal = document.getElementById('myModal');
@@ -75,9 +93,7 @@ initialize_calendar = function() {
         var calendar = $(this);
         calendar.fullCalendar({
             header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'agendaWeek, month, agendaDay'
+                center: 'title'
             },
 
             selectable: true,

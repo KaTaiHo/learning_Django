@@ -15,7 +15,13 @@ $(document).ready(function() {
     $('#display-course').click(displayCourse);
     $('#myModal .close').click(closeModal);
     $(".modal-body").find(".button").click(function () {
-        alert("hi there");
+        var data = $(this).closest('div').attr("id");
+        data = JSON.parse(data + '"}');
+
+
+
+
+
 
     });
  });

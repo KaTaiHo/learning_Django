@@ -67,8 +67,10 @@ for row in save_list[2:]:
 		elif capacity > size:
 			current_status = "open"
 
+
+
 		q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
-			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip(), instructor = fix_input(row[get_pos('Instructor')]),
+			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip().replace(" ", "") , instructor = fix_input(row[get_pos('Instructor')]),
 			days = row[get_pos('Days')], start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
 			building = row[get_pos('Building')], room = row[get_pos('Room')], status = current_status)
 		

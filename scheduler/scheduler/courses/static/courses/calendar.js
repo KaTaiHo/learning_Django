@@ -104,7 +104,7 @@ function displayCourse() {
                 endTime = momentTime + endTime + ":00";
                 endTime = $.fullCalendar.moment(endTime);
 
-                var event={id:0 , title: data['dept'] + data['course_num'] + data['instructor'], start:  startTime, end: endTime};
+                var event={id:0 , title: data['dept'] + data['course_num'], start:  startTime, end: endTime};
                 $('#calendar').fullCalendar( 'renderEvent', event, true);
             }
         }

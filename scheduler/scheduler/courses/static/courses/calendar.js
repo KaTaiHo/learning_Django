@@ -76,6 +76,8 @@ function displayCourse() {
                 startTime = data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
             }
 
+            alert(startTime);
+
             if (data['end_time'].toString().length % 2 == 0) {
                 endTime = data['end_time'].toString().slice(0,2) + ":" + data['end_time'].toString().slice(2,4);
             }
@@ -83,6 +85,7 @@ function displayCourse() {
                 endTime = data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
             }
 
+            alert(endTime);
             momentTime = momentTime + startTime + ":00-"+ endTime;
             var m = $.fullCalendar.moment(momentTime);
             var event={id:0 , title: data['dept'] + data['course_num'], start:  m};

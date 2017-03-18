@@ -86,9 +86,13 @@ function displayCourse() {
             }
 
             alert(endTime);
-            momentTime = momentTime + startTime + ":00-"+ endTime;
-            var m = $.fullCalendar.moment(momentTime);
-            var event={id:0 , title: data['dept'] + data['course_num'], start:  m};
+            startTime = momentTime + startTime + ":00";
+            startTime = $.fullCalendar.moment(startTime);
+
+            endTime = momentTime + endTime + ":00";
+            endTime = $.fullCalendar.moment(endTime);
+
+            var event={id:0 , title: data['dept'] + data['course_num'], start:  startTime, end: endTime};
             $('#calendar').fullCalendar( 'renderEvent', event, true);
         }
         catch(err){

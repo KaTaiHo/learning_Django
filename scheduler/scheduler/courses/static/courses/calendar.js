@@ -154,7 +154,7 @@ initialize_calendar = function() {
             editable: true,
             eventLimit: true,
             defaultView: 'agendaWeek',
-            firstHour: "07:00:00"
+            firstHour: 7
 ma
         });
     })

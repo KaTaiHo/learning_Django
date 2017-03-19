@@ -31,7 +31,7 @@ function closeModal() {
 function getSpecificDate(d, num) {
   d = new Date(d);
   var day = d.getDay(),
-      diff = d.getDate() - day + (day == 0 ? -6:num); // adjust when day is sunday
+      diff = d.getDate() - day; // adjust when day is sunday  + (day == 0 ? -6:num)
   return new Date(d.setDate(diff));
 }
 

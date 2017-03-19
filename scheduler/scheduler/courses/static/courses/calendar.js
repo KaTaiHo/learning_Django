@@ -63,6 +63,7 @@ function displayCourse() {
     $(".modal-body").find(".button").click(function () {
         try {
             var dayDict = {"M":1, "T":2, "W":3, "TH":4, "F":5};
+            //var data = $(".modal-body").find(".button").closest('div').attr("id");
             var data = $(this).closest('div').attr("id");
             data = JSON.parse(data);
 
@@ -88,14 +89,14 @@ function displayCourse() {
                     startTime = data['start_time'].toString().slice(0,2) + ":" + data['start_time'].toString().slice(2,4);
                 }
                 else {
-                    startTime = data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
+                    startTime = '0' + data['start_time'].toString().slice(0,1) + ":" + data['start_time'].toString().slice(1,3);
                 }
 
                 if (data['end_time'].toString().length % 2 == 0) {
                     endTime = data['end_time'].toString().slice(0,2) + ":" + data['end_time'].toString().slice(2,4);
                 }
                 else {
-                    endTime = data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
+                    endTime = '0' + data['end_time'].toString().slice(0,1) + ":" + data['end_time'].toString().slice(1,3);
                 }
 
                 startTime = momentTime + startTime + ":00";

@@ -36,7 +36,7 @@ function getSpecificDate(d, num) {
 }
 
 function displayCourse() {
-    //$('#class-container').empty();
+    $('.modal-body').empty();
     var arg1 = $('#course_id :selected').text();
     var arg2 = $('#course_num :selected').text();
     var xmlHttp = new XMLHttpRequest();
@@ -45,7 +45,7 @@ function displayCourse() {
     var courseArray = JSON.parse(xmlHttp.responseText);
     for (i = 0; i < courseArray.length; i++) {
         var newID = JSON.stringify(courseArray[i]);
-        $('#class-container').append(
+        $('.modal-body').append(
         "<div id=" + newID + ">" +
         "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "&emsp;<strong>Professor: </strong>" + courseArray[i]['instructor'] +
             "&emsp;<strong>Status: </strong>" + courseArray[i]['status'] + "&emsp;<strong>Course: </strong>" + courseArray[i]['dept'] + courseArray[i]['course_num']
@@ -60,7 +60,7 @@ function displayCourse() {
     var modal = document.getElementById('myModal');
     modal.style.display = "block";
 
-    $("#class-container").find(".button").click(function () {
+    $(".modal-body").find(".button").click(function () {
         try {
             var dayDict = {"M":1, "T":2, "W":3, "TH":4, "F":5};
             //var data = $(".modal-body").find(".button").closest('div').attr("id");

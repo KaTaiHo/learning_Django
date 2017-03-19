@@ -77,8 +77,8 @@
       <file leaf-file-name="calendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/courses/static/courses/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="157" column="12" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="12" />
+            <state relative-caret-position="471">
+              <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -888,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/courses/static/courses/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="157" column="12" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="12" />
+        <state relative-caret-position="471">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding />
         </state>
       </provider>

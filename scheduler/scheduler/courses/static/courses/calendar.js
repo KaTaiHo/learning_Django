@@ -29,10 +29,14 @@ function closeModal() {
 }
 
 function getSpecificDate(d, num) {
-  d = new Date(d);
-  var day = d.getDay(),
-      diff = d.getDate() - day; // adjust when day is sunday  + (day == 0 ? -6:num)
-  return new Date(d.setDate(diff));
+//  d = new Date(d);
+//  var day = d.getDay(),
+//      diff = d.getDate() - day; // adjust when day is sunday  + (day == 0 ? -6:num)
+//  return new Date(d.setDate(diff));
+    var today = new Date();
+    var dayOfWeekStartingSundayZeroIndexBased = today.getDay(); // 0 : Sunday ,1 : Monday,2,3,4,5,6 : Saturday
+    var dayOfWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay()+num);
+    return dayOfWeek;
 }
 
 function displayCourse() {

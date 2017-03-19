@@ -57,8 +57,8 @@ function displayCourse() {
         );
     }
     //alert(xmlHttp.responseText);
-    var modal = document.getElementById('myModal');
-    modal.style.display = "block";
+    //var modal = document.getElementById('myModal');
+    //modal.style.display = "block";
 
     $("#class-container").find(".button").click(function () {
         try {
@@ -154,6 +154,8 @@ initialize_calendar = function() {
             editable: true,
             eventLimit: true,
             defaultView: 'agendaWeek'
+            minTime: "07:00:00",
+ma          maxTime: "21:00:00",
         });
     })
 };

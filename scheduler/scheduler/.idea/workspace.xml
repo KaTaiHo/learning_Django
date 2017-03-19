@@ -104,22 +104,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/courses/templates/courses/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+            <state relative-caret-position="339">
+              <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
               <folding>
-                <element signature="e#3885#3892#0" expanded="true" />
+                <element signature="e#3892#3899#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/courses/static/courses/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="576">
               <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding />
             </state>
@@ -147,8 +147,8 @@
         <option value="$PROJECT_DIR$/courses/views.py" />
         <option value="$PROJECT_DIR$/FTPSchedule.py" />
         <option value="$PROJECT_DIR$/courses/static/courses/calendar.js" />
-        <option value="$PROJECT_DIR$/courses/templates/courses/index.html" />
         <option value="$PROJECT_DIR$/courses/static/courses/style.css" />
+        <option value="$PROJECT_DIR$/courses/templates/courses/index.html" />
       </list>
     </option>
   </component>
@@ -642,7 +642,7 @@
         <state relative-caret-position="1050">
           <caret line="70" column="26" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
           <folding>
-            <element signature="e#3885#3892#0" expanded="true" />
+            <element signature="e#3892#3899#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,21 +876,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/templates/courses/index.html">
+    <entry file="file://$PROJECT_DIR$/courses/static/courses/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-          <folding>
-            <element signature="e#3885#3892#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="576">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/courses/static/courses/style.css">
+    <entry file="file://$PROJECT_DIR$/courses/templates/courses/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="339">
+          <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
+          <folding>
+            <element signature="e#3892#3899#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

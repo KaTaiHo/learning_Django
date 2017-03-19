@@ -143,7 +143,6 @@ body {
 	top:1px;
 }
 
-#display-course {
-    margin: 0 auto;
-
+#button-container {
+     text-align: center;
 }

@@ -66,7 +66,7 @@ function displayCourse() {
 
     $("#class-container").find(".button").click(function () {
         try {
-            var dayDict = {"M":0, "T":1, "W":2, "TH":3, "F":4};
+            var dayDict = {"M":1, "T":2, "W":3, "TH":4, "F":5};
             //var data = $(".modal-body").find(".button").closest('div').attr("id");
             var data = $(this).closest('div').attr("id");
             data = JSON.parse(data);
@@ -77,7 +77,7 @@ function displayCourse() {
                 var dayIndex = 0;
 
                 if (s.length  > 1 && s[0] == "T" && s[1] == "H") {
-                    dayIndex = 3;
+                    dayIndex = 4;
                     s = s.slice(2, s.length);
                 }
                 else {

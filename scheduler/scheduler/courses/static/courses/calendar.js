@@ -153,9 +153,9 @@ initialize_calendar = function() {
             selectHelper: true,
             editable: true,
             eventLimit: true,
-            defaultView: 'agendaWeek'
+            defaultView: 'agendaWeek',
             minTime: "07:00:00",
-ma          maxTime: "21:00:00",
+ma          maxTime: "21:00:00"
         });
     })
 };

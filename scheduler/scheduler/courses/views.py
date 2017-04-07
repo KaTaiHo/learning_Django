@@ -65,7 +65,7 @@ def index(request):
         'course_number': course_number
     }
 
-    return render(request, 'courses/index.html', context, username = "katai")
+    return render(request, 'courses/index.html', context)
 
 
 

@@ -52,6 +52,7 @@ function displayCourse() {
     for (i = 0; i < courseArray.length; i++) {
         var newID = JSON.stringify(courseArray[i]);
         $('#class-container').append(
+        "<br>" +
         "<div id=" + newID + ">" +
         "<p>" + "<strong>Title: </strong>" + courseArray[i]['title'] + "&emsp;<strong>Professor: </strong>" + courseArray[i]['instructor'] +
             "&emsp;<strong>Status: </strong>" + courseArray[i]['status'] + "&emsp;<strong>Course: </strong>" + courseArray[i]['dept'] + courseArray[i]['course_num']

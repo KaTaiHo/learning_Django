@@ -47,6 +47,7 @@ function displayCourse() {
     xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
+    $('#class-container').empty();
     for (i = 0; i < courseArray.length; i++) {
         var newID = JSON.stringify(courseArray[i]);
         $('#class-container').append(

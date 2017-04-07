@@ -22,9 +22,9 @@ os.chdir(current_dir)
 
 ftp = FTP('reg-it.austin.utexas.edu')
 ftp.login()
-ftp.retrbinary('RETR Future_Semester_Report', open('Fall2017.csv', 'wb').write)
+ftp.retrbinary('RETR Current_Semester_Report', open('Spring2017.csv', 'wb').write)
 
-log = open('Fall2017.csv', 'r')
+log = open('Spring2017.csv', 'r')
 save_list = []
 
 count = 0
@@ -49,7 +49,7 @@ print (time_modified)
 
 log.close()
 
-log = open('Fall2017.csv', 'w')
+log = open('Spring2017.csv', 'w')
 writer = csv.writer(log)
 for row in save_list:
 	writer.writerow(row)
@@ -67,9 +67,18 @@ for row in save_list[2:]:
 		elif capacity > size:
 			current_status = "open"
 
+		current_semester = ""
+		semester_val = row[get_pos('Semester')]
+		if semester_val == 9:
+			current_semester = "Fall"
+		elif semester_val == 6:
+			current_semester = "Summer"
+		elif semester_val == 2:
+			current_semester = "Spring"
 
 
-		q = Schedule(year = row[get_pos('Year')], dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
+
+		q = Schedule(year = row[get_pos('Year')], semester = current_semester, dept = fix_input(row[get_pos('Dept-Abbr')]), course_num = fix_input(row[get_pos('Course Nbr')]),
 			unique = row[get_pos('Unique')], title = str(row[get_pos('Title')]).strip().replace(" ", "") , instructor = fix_input(row[get_pos('Instructor')]),
 			days = str(row[get_pos('Days')]).strip(), start_time = row[get_pos('From')], end_time = row[get_pos('To')], 
 			building = row[get_pos('Building')], room = str(row[get_pos('Room')]).strip(), status = current_status)

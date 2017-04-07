@@ -41,10 +41,10 @@ def get_unique_set():
 # list all schedules or create a new one
 class ScheduleList(APIView):
 
-    def get(self, request, dept_name, course_id, year_id):
+    def get(self, request, dept_name, course_id, semester_id, year_id):
         schedule = Schedule.objects.filter(
-            dept=str(dept_name), course_num=str(course_id),
-            year = int(year_id)
+            dept =str(dept_name), course_num=str(course_id),
+            year = int(year_id), semester = str(semester_id)
         )
         serializer = ScheduleSerializer(schedule, many=True)
         return Response(serializer.data)

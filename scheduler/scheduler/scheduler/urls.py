@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/$', views.ScheduleList.as_view()),
-    url(r'^api/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),
+    url(r'^api/(\w+)/(\w+)/(\w+)/(\d+)/$', views.ScheduleList.as_view()),
     url(r'^api/(\d+)/(\d+)/$', views.UniqueIDList.as_view()),
 ]
 

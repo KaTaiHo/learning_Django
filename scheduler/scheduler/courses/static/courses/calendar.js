@@ -43,8 +43,9 @@ function displayCourse() {
     //$('#class-container').empty();
     var arg1 = $('#course_id :selected').text();
     var arg2 = $('#course_num :selected').text();
+    var arg3 = $('#semester :selected').text();
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/2017", false );
+    xmlHttp.open( "GET", "http://138.197.115.22:8000/api/" + arg1 + "/" + arg2 + "/" + arg3.split(" ")[0] + "/" + arg3.split(" ")[1], false );
     xmlHttp.send(null);
     var courseArray = JSON.parse(xmlHttp.responseText);
     $('#class-container').empty();

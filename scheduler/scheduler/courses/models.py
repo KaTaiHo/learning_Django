@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Schedule(models.Model):
     year = models.IntegerField()
+    semester = models.CharField(max_length=8, default="unknown")
     dept = models.CharField(max_length=3)
     course_num = models.CharField(max_length=4)
     unique = models.IntegerField()

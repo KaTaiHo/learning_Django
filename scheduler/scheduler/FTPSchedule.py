@@ -22,9 +22,9 @@ os.chdir(current_dir)
 
 ftp = FTP('reg-it.austin.utexas.edu')
 ftp.login()
-ftp.retrbinary('RETR Current_Semester_Report', open('Spring2017.csv', 'wb').write)
+ftp.retrbinary('RETR Future_Semester_Report', open('Fall2017.csv', 'wb').write)
 
-log = open('Spring2017.csv', 'r')
+log = open('Fall2017.csv', 'r')
 save_list = []
 
 count = 0
@@ -49,7 +49,7 @@ print (time_modified)
 
 log.close()
 
-log = open('Spring2017.csv', 'w')
+log = open('Fall2017.csv', 'w')
 writer = csv.writer(log)
 for row in save_list:
 	writer.writerow(row)
